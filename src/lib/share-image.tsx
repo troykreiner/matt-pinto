@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
@@ -56,7 +58,7 @@ export function shareImageConfig(alt: string) {
 
 export async function generateShareImageResponse() {
   const photo = await readFile(
-    join(process.cwd(), "public", "matt-pinto-hero-share.png")
+    join(process.cwd(), "public", "matt-pinto-hero-share-cutout.png")
   );
   const photoSrc = `data:image/png;base64,${photo.toString("base64")}`;
 
@@ -67,7 +69,7 @@ export async function generateShareImageResponse() {
           width: "100%",
           height: "100%",
           display: "flex",
-          padding: "16px",
+          padding: "8px",
           background: FOREGROUND,
           color: FOREGROUND,
         }}
@@ -81,7 +83,7 @@ export async function generateShareImageResponse() {
             flexDirection: "column",
             border: `8px solid ${FOREGROUND}`,
             background: BACKGROUND,
-            padding: "24px 26px 22px",
+            padding: "22px 24px 18px",
             overflow: "hidden",
           }}
         >
@@ -106,52 +108,58 @@ export async function generateShareImageResponse() {
               width: "100%",
               flex: 1,
               display: "flex",
-              alignItems: "center",
+              alignItems: "flex-start",
               justifyContent: "space-between",
-              paddingTop: "10px",
+              paddingTop: "18px",
             }}
           >
             <div
               style={{
-                width: "54%",
+                width: "43%",
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
-                transform: "translateY(6px)",
+                justifyContent: "flex-start",
               }}
             >
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  fontSize: "74px",
+                  fontSize: "78px",
                   lineHeight: 0.9,
                   fontWeight: 800,
                   letterSpacing: "-0.05em",
                 }}
               >
                 <span>Playin&apos; Blues,</span>
-                <span>Rock &amp; Soul Music</span>
+                <span>Rock &amp;</span>
+                <span>Soul Music</span>
               </div>
               <div
                 style={{
                   display: "flex",
-                  marginTop: "24px",
-                  maxWidth: "520px",
-                  fontSize: "30px",
-                  lineHeight: 1.08,
-                  fontWeight: 600,
-                  letterSpacing: "-0.02em",
+                  marginTop: "28px",
+                  minWidth: "250px",
+                  minHeight: "62px",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "10px 24px 8px",
+                  background: FOREGROUND,
+                  color: BACKGROUND,
+                  fontSize: "32px",
+                  lineHeight: 1,
+                  fontWeight: 800,
+                  textTransform: "uppercase",
+                  letterSpacing: "-0.03em",
                 }}
               >
-                Guitarist and songwriter Matt Pinto focuses on original songs
-                and also teaches music lessons.
+                Book a Lesson
               </div>
             </div>
 
             <div
               style={{
-                width: "37%",
+                width: "57%",
                 height: "100%",
                 display: "flex",
                 alignItems: "flex-end",
@@ -162,16 +170,16 @@ export async function generateShareImageResponse() {
               <img
                 style={{
                   position: "absolute",
-                  right: "-6px",
-                  bottom: "-8px",
-                  width: "100%",
-                  height: "92%",
+                  right: "-70px",
+                  bottom: "-30px",
+                  width: "96%",
+                  height: "125%",
                   display: "flex",
-                  objectFit: "cover",
-                  objectPosition: "center top",
-                  opacity: 0.38,
+                  objectFit: "contain",
+                  objectPosition: "center bottom",
+                  opacity: 0.98,
                   mixBlendMode: "multiply",
-                  filter: "grayscale(1) contrast(1.05)",
+                  filter: "grayscale(1) contrast(1.15) brightness(0.98)",
                 }}
                 src={photoSrc}
                 alt=""
@@ -179,10 +187,9 @@ export async function generateShareImageResponse() {
               <div
                 style={{
                   position: "absolute",
-                  inset: "10% 0 0 8%",
-                  borderRadius: "36px 36px 0 0",
+                  inset: "0",
                   background:
-                    "linear-gradient(180deg, rgba(61, 124, 23, 0.16) 0%, rgba(61, 124, 23, 0.34) 100%)",
+                    "linear-gradient(90deg, rgba(5, 97, 5, 1) 0%, rgba(5, 97, 5, 0.92) 16%, rgba(5, 97, 5, 0.48) 42%, rgba(5, 97, 5, 0.06) 68%)",
                 }}
               />
               <div
@@ -190,15 +197,7 @@ export async function generateShareImageResponse() {
                   position: "absolute",
                   inset: "0",
                   background:
-                    `linear-gradient(90deg, ${BACKGROUND} 0%, rgba(5, 97, 5, 0.82) 16%, rgba(5, 97, 5, 0.25) 48%, rgba(5, 97, 5, 0.12) 100%)`,
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  inset: "0",
-                  background:
-                    `linear-gradient(180deg, rgba(5, 97, 5, 0.08) 0%, rgba(61, 124, 23, 0.16) 100%)`,
+                    "linear-gradient(180deg, rgba(5, 97, 5, 0.02) 0%, rgba(5, 97, 5, 0.18) 100%)",
                 }}
               />
               <div
@@ -206,7 +205,8 @@ export async function generateShareImageResponse() {
                   width: "100%",
                   height: "100%",
                   display: "flex",
-                  background: `radial-gradient(circle at 66% 40%, rgba(189, 158, 1, 0.08), transparent 28%)`,
+                  background:
+                    "radial-gradient(circle at 62% 38%, rgba(189, 158, 1, 0.08), transparent 28%)",
                 }}
               />
             </div>
@@ -217,7 +217,7 @@ export async function generateShareImageResponse() {
               width: "100%",
               display: "flex",
               alignItems: "flex-end",
-              justifyContent: "space-between",
+              justifyContent: "flex-start",
               fontSize: "22px",
               lineHeight: 0.95,
               fontWeight: 800,

@@ -193,6 +193,8 @@ img {
 
 .hero-lesson-link {
   display: inline-flex;
+  justify-self: start;
+  width: fit-content;
   align-items: center;
   justify-content: center;
   min-width: clamp(12rem, 18vw, 14rem);
@@ -280,6 +282,22 @@ img {
 }
 
 @media (max-width: 767px) {
+  .site-header {
+    padding-right: clamp(3.6rem, 12vw, 4.4rem);
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    gap: 0.45rem 0.75rem;
+    overflow: visible;
+    white-space: normal;
+  }
+
+  .site-nav-link {
+    font-size: clamp(0.8rem, 2.9vw, 0.98rem);
+    letter-spacing: -0.01em;
+  }
+
   .hero-layout {
     align-content: start;
     padding-top: clamp(0.75rem, 3vw, 1.25rem);
@@ -287,6 +305,7 @@ img {
 
   .hero-copy-group,
   .site-main--locked .hero-copy-group {
+    position: static;
     transform: none;
     align-self: start;
   }
@@ -304,6 +323,7 @@ img {
     left: clamp(0.8rem, 4vw, 1.2rem);
     top: auto;
     bottom: clamp(3.2rem, 12vw, 4.6rem);
+    z-index: 3;
     min-width: 0;
     padding-inline: 1.2rem;
     transform: none;
