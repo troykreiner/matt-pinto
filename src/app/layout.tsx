@@ -11,7 +11,31 @@ const leagueSpartan = League_Spartan({
 
 export const metadata: Metadata = {
   title: "Matt Pinto",
-  description: "Official website for guitarist Matt Pinto.",
+  description:
+    "Matt Pinto is a guitarist, songwriter, and performer focused on blues, rock, and soul music.",
+  metadataBase: new URL("https://matt-pinto.vercel.app"),
+  keywords: [
+    "Matt Pinto",
+    "guitarist",
+    "songwriter",
+    "blues guitar",
+    "rock guitar",
+    "soul music",
+    "original music",
+  ],
+  openGraph: {
+    title: "Matt Pinto",
+    description:
+      "Matt Pinto plays guitar and writes original music rooted in blues, rock, and soul.",
+    type: "website",
+    siteName: "Matt Pinto",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Matt Pinto",
+    description:
+      "Matt Pinto plays guitar and writes original music rooted in blues, rock, and soul.",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
