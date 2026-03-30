@@ -1,3 +1,6 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+
 import { ImageResponse } from "next/og";
 
 const BACKGROUND = "#056105";
@@ -52,6 +55,11 @@ export function shareImageConfig(alt: string) {
 }
 
 export async function generateShareImageResponse() {
+  const photo = await readFile(
+    join(process.cwd(), "public", "matt-pinto-hero-share.png")
+  );
+  const photoSrc = `data:image/png;base64,${photo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -71,9 +79,9 @@ export async function generateShareImageResponse() {
             height: "100%",
             display: "flex",
             flexDirection: "column",
-            border: `12px solid ${FOREGROUND}`,
+            border: `8px solid ${FOREGROUND}`,
             background: BACKGROUND,
-            padding: "26px 28px 24px",
+            padding: "24px 26px 22px",
             overflow: "hidden",
           }}
         >
@@ -136,29 +144,69 @@ export async function generateShareImageResponse() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Guitarist and songwriter Matt Pinto performs blues, rock, and
-                soul music with a focus on original songs and direct connection.
+                Guitarist and songwriter Matt Pinto focuses on original songs
+                and also teaches music lessons.
               </div>
             </div>
 
             <div
               style={{
-                width: "34%",
+                width: "37%",
                 height: "100%",
                 display: "flex",
                 alignItems: "flex-end",
                 justifyContent: "flex-end",
+                position: "relative",
               }}
             >
+              <img
+                style={{
+                  position: "absolute",
+                  right: "-6px",
+                  bottom: "-8px",
+                  width: "100%",
+                  height: "92%",
+                  display: "flex",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                  opacity: 0.38,
+                  mixBlendMode: "multiply",
+                  filter: "grayscale(1) contrast(1.05)",
+                }}
+                src={photoSrc}
+                alt=""
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  inset: "10% 0 0 8%",
+                  borderRadius: "36px 36px 0 0",
+                  background:
+                    "linear-gradient(180deg, rgba(61, 124, 23, 0.16) 0%, rgba(61, 124, 23, 0.34) 100%)",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  inset: "0",
+                  background:
+                    `linear-gradient(90deg, ${BACKGROUND} 0%, rgba(5, 97, 5, 0.82) 16%, rgba(5, 97, 5, 0.25) 48%, rgba(5, 97, 5, 0.12) 100%)`,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  inset: "0",
+                  background:
+                    `linear-gradient(180deg, rgba(5, 97, 5, 0.08) 0%, rgba(61, 124, 23, 0.16) 100%)`,
+                }}
+              />
               <div
                 style={{
                   width: "100%",
-                  height: "82%",
+                  height: "100%",
                   display: "flex",
-                  borderRadius: "36px 36px 0 0",
-                  background:
-                    "linear-gradient(180deg, rgba(189, 158, 1, 0.08) 0%, rgba(189, 158, 1, 0.28) 100%)",
-                  opacity: 0.95,
+                  background: `radial-gradient(circle at 66% 40%, rgba(189, 158, 1, 0.08), transparent 28%)`,
                 }}
               />
             </div>
@@ -178,7 +226,6 @@ export async function generateShareImageResponse() {
             }}
           >
             <span>Please, listen to each other</span>
-            <span>matt-pinto.vercel.app</span>
           </div>
         </div>
       </div>
