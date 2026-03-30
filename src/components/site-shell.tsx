@@ -1,0 +1,60 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
+
+import { navItems } from "@/lib/site-content";
+
+type SiteShellProps = {
+  children: ReactNode;
+};
+
+export function SiteShell({ children }: SiteShellProps) {
+  const pathname = usePathname();
+
+  return (
+    <div className="site-frame">
+      <div className="site-border">
+        <header className="site-header">
+          <Link href="/" className="site-logo-link" aria-label="Matt Pinto home">
+            <Image
+              src="/matt-pinto-logo.svg"
+              alt="Matt Pinto"
+              width={809}
+              height={115}
+              priority
+              className="site-logo"
+            />
+          </Link>
+          <Link href="/" className="site-symbol-link" aria-label="Home">
+            <Image
+              src="/matt-pinto-symbol.svg"
+              alt=""
+              width={114}
+              height={87}
+              className="site-symbol"
+            />
+          </Link>
+          <nav className="site-nav" aria-label="Primary">
+            {navItems.map((item) => {
+              const active = pathname === item.href;
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`site-nav-link${active ? " is-active" : ""}`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </header>
+        <main className="site-main">{children}</main>
+      </div>
+    </div>
+  );
+}
