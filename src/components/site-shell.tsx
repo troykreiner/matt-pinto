@@ -9,14 +9,15 @@ import { navItems } from "@/lib/site-content";
 
 type SiteShellProps = {
   children: ReactNode;
+  fitViewport?: boolean;
 };
 
-export function SiteShell({ children }: SiteShellProps) {
+export function SiteShell({ children, fitViewport = false }: SiteShellProps) {
   const pathname = usePathname();
 
   return (
-    <div className="site-frame">
-      <div className="site-border">
+    <div className={`site-frame${fitViewport ? " site-frame--locked" : ""}`}>
+      <div className={`site-border${fitViewport ? " site-border--locked" : ""}`}>
         <header className="site-header">
           <Link href="/" className="site-logo-link" aria-label="Matt Pinto home">
             <Image
@@ -53,7 +54,9 @@ export function SiteShell({ children }: SiteShellProps) {
             })}
           </nav>
         </header>
-        <main className="site-main">{children}</main>
+        <main className={`site-main${fitViewport ? " site-main--locked" : ""}`}>
+          {children}
+        </main>
       </div>
     </div>
   );

@@ -4,11 +4,17 @@ import { SiteShell } from "@/components/site-shell";
 
 export default function Home() {
   return (
-    <SiteShell>
+    <SiteShell fitViewport>
       <section className="hero-layout">
         <div className="hero-copy">
           <h1 className="sr-only">Matt Pinto</h1>
-          <h2 className="hero-title">Playin&apos; Blues, Rock &amp; Soul Music</h2>
+          <h2 className="hero-title">
+            Playin&apos;&nbsp;Blues,
+            <br />
+            Rock &amp;
+            <br />
+            Soul Music
+          </h2>
         </div>
         <div className="hero-figure-wrap" aria-hidden="true">
           <div className="hero-figure-tint" />
