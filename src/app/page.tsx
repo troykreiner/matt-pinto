@@ -2,30 +2,32 @@ import Image from "next/image";
 
 import { SiteShell } from "@/components/site-shell";
 
-const lessonFormUrl = "#";
+const lessonFormUrl = "https://form.typeform.com/to/uImhn1up";
 
 export default function Home() {
   return (
     <SiteShell fitViewport>
       <section className="hero-layout">
-        <div className="hero-copy">
-          <h1 className="sr-only">Matt Pinto</h1>
-          <h2 className="hero-title">
-            Playin&apos;&nbsp;Blues,
-            <br />
-            Rock &amp;
-            <br />
-            Soul Music
-          </h2>
+        <div className="hero-copy-group">
+          <div className="hero-copy">
+            <h1 className="sr-only">Matt Pinto</h1>
+            <h2 className="hero-title">
+              Playin&apos;&nbsp;Blues,
+              <br />
+              Rock &amp;
+              <br />
+              Soul Music
+            </h2>
+          </div>
+          <a
+            href={lessonFormUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="hero-lesson-link"
+          >
+            Book a Lesson
+          </a>
         </div>
-        <a
-          href={lessonFormUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="hero-lesson-link"
-        >
-          Book a Lesson
-        </a>
         <div className="hero-figure-wrap" aria-hidden="true">
           <div className="hero-figure-tint" />
           <Image

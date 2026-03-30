@@ -160,9 +160,20 @@ img {
   align-items: center;
 }
 
-.hero-copy {
+.hero-copy-group {
   position: relative;
   z-index: 3;
+  display: grid;
+  gap: clamp(1.4rem, 2.8vh, 2.1rem);
+}
+
+.site-main--locked .hero-copy-group {
+  align-self: center;
+  transform: translateY(clamp(-112px, -13vh, -68px));
+}
+
+.hero-copy {
+  position: relative;
   max-width: min(26rem, 48vw);
   margin-top: clamp(7rem, 16vw, 14rem);
 }
@@ -170,8 +181,6 @@ img {
 .site-main--locked .hero-copy {
   max-width: min(22rem, 46vw);
   margin-top: 0;
-  align-self: center;
-  transform: translateY(clamp(-60px, -7vh, -36px));
 }
 
 .hero-title {
@@ -183,10 +192,6 @@ img {
 }
 
 .hero-lesson-link {
-  position: absolute;
-  left: clamp(1rem, 2vw, 1.5rem);
-  top: 50%;
-  z-index: 3;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -200,7 +205,6 @@ img {
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: -0.03em;
-  transform: translateY(clamp(4.8rem, 11vh, 7.5rem));
   transition:
     background-color 140ms ease,
     color 140ms ease;
@@ -281,6 +285,12 @@ img {
     padding-top: clamp(0.75rem, 3vw, 1.25rem);
   }
 
+  .hero-copy-group,
+  .site-main--locked .hero-copy-group {
+    transform: none;
+    align-self: start;
+  }
+
   .hero-copy,
   .site-main--locked .hero-copy {
     max-width: min(12rem, 52vw);
@@ -290,6 +300,7 @@ img {
   }
 
   .hero-lesson-link {
+    position: absolute;
     left: clamp(0.8rem, 4vw, 1.2rem);
     top: auto;
     bottom: clamp(3.2rem, 12vw, 4.6rem);
