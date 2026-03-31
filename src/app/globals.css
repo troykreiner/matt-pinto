@@ -169,7 +169,9 @@ img {
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: -0.015em;
-  transition: opacity 140ms ease;
+  transition:
+    color 140ms ease,
+    opacity 140ms ease;
   animation: cascade-reveal 680ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -198,7 +200,11 @@ img {
 }
 
 .site-nav-link:hover,
-.site-nav-link:focus-visible,
+.site-nav-link:focus-visible {
+  color: #ab8f01;
+  opacity: 1;
+}
+
 .site-nav-link.is-active {
   opacity: 0.75;
 }
@@ -262,6 +268,7 @@ img {
 
 .hero-title-line {
   display: block;
+  white-space: nowrap;
   opacity: 0;
   animation: cascade-reveal 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -317,11 +324,11 @@ img {
 .hero-figure {
   position: absolute;
   bottom: 0;
-  left: 34%;
+  left: 39%;
   width: auto;
   height: min(92vh, 78rem);
   max-width: none;
-  transform: translateX(-38%);
+  transform: translateX(-34%);
   mix-blend-mode: multiply;
   opacity: 0.98;
   filter: grayscale(1) contrast(1.15) brightness(0.98);
@@ -441,7 +448,7 @@ img {
     max-width: min(12rem, 52vw);
     margin-top: 0;
     align-self: start;
-    transform: translateY(clamp(-1.5rem, -6vw, -0.5rem));
+    transform: translateY(clamp(0.65rem, 3vw, 1.1rem));
   }
 
   .hero-lesson-link {
@@ -514,7 +521,7 @@ img {
 @media (max-width: 640px) {
   :root {
     --frame: 10px;
-    --stroke: 5px;
+    --stroke: 4px;
   }
 
   .site-header {
@@ -546,7 +553,7 @@ img {
   }
 
   .hero-layout {
-    padding-top: 0.2rem;
+    padding-top: 0.7rem;
   }
 
   .hero-copy {
