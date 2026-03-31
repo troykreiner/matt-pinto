@@ -41,6 +41,9 @@ export default function BiographyPage() {
       <section className="biography-page">
         <div className="biography-module">
           <div className="biography-hero">
+            <p className="biography-eyebrow biography-eyebrow--mobile">
+              Guitarist / Musician / Teacher
+            </p>
             <div className="biography-photo-frame">
               <Image
                 src="/matt-pinto-bio.jpg"

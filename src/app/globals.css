@@ -1361,6 +1361,10 @@ img {
   letter-spacing: 0.12em;
 }
 
+.biography-eyebrow--mobile {
+  display: none;
+}
+
 .biography-title {
   font-size: clamp(2.8rem, 7vw, 6rem);
   line-height: 0.9;
@@ -1702,6 +1706,15 @@ img {
 
   .biography-hero {
     gap: 1rem;
+  }
+
+  .biography-eyebrow--mobile {
+    display: block;
+    margin: 0 0 -0.15rem;
+  }
+
+  .biography-hero-copy .biography-eyebrow {
+    display: none;
   }
 
   .biography-photo {
