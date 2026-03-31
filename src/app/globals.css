@@ -785,15 +785,15 @@ img {
   align-items: center;
   min-height: 100%;
   padding: clamp(1rem, 2vw, 1.5rem);
-  padding-top: clamp(2rem, 7vw, 4rem);
+  padding-top: clamp(0.75rem, 2vw, 1.5rem);
   padding-inline: 150px;
 }
 
 .biography-module {
   width: min(100%, 72rem);
   display: grid;
-  gap: clamp(1.5rem, 2.8vw, 2.4rem);
-  padding-top: clamp(0.45rem, 1vw, 0.75rem);
+  gap: clamp(1.2rem, 2.2vw, 2rem);
+  padding-top: 0;
   padding-bottom: clamp(1.1rem, 2vw, 1.6rem);
   padding-inline: clamp(3rem, 6vw, 5.5rem);
   border: 1px solid rgba(189, 158, 1, 0.24);
@@ -810,7 +810,6 @@ img {
   gap: 0.9rem;
 }
 
-.biography-top-rule,
 .biography-divider h2,
 .biography-card-label {
   font-size: clamp(0.9rem, 1.4vw, 1rem);

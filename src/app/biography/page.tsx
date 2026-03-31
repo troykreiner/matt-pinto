@@ -40,8 +40,6 @@ export default function BiographyPage() {
     <SiteShell>
       <section className="biography-page">
         <div className="biography-module">
-          <p className="biography-top-rule">Biography</p>
-
           <div className="biography-hero">
             <div className="biography-photo-frame">
               <Image
