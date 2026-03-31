@@ -1,5 +1,4 @@
 export const navItems = [
-  { href: "/about", label: "About", mobileLabel: "About" },
   { href: "/albums", label: "Albums", mobileLabel: "Albums" },
   { href: "/biography", label: "Biography", mobileLabel: "Bio" },
   { href: "/resume", label: "Resume", mobileLabel: "Resume" },
@@ -7,11 +6,6 @@ export const navItems = [
 ];
 
 export const pageCopy = {
-  about: {
-    eyebrow: "About",
-    title: "A guitarist rooted in groove, feel, and direct connection.",
-    body: "Matt Pinto brings blues, rock, and soul into a sharp modern performance style shaped by bandstands, collaboration, and close listening. This page can expand into a short artist statement, current projects, and the live sets he is best known for.",
-  },
   albums: {
     eyebrow: "Albums",
     title: "Recorded work, featured releases, and listening links.",
@@ -29,7 +23,7 @@ export const pageCopy = {
   },
   contact: {
     eyebrow: "Contact",
-    title: "Booking, collaboration, and direct contact details.",
-    body: "This page is set up for booking inquiries, management, email, social links, and any preferred contact notes. We can also add a simple form if you want incoming messages routed through email later.",
+    title: "Let's work together.",
+    body: "Booking inquiries, private lessons, and creative collaborations—drop a line.",
   },
 };

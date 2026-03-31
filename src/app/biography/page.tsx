@@ -64,7 +64,7 @@ export default function BiographyPage() {
 
           <div className="biography-divider">
             <div className="biography-rule" />
-            <h2>About</h2>
+            <h2>Biography</h2>
             <div className="biography-rule" />
           </div>
 
