@@ -12,7 +12,7 @@ export default function Home() {
           <div className="hero-copy">
             <h1 className="sr-only">Matt Pinto</h1>
             <h2 className="hero-title">
-              <span className="hero-title-line">Playin&apos;&nbsp;Blues,</span>
+              <span className="hero-title-line">Playin&apos; Blues,</span>
               <span className="hero-title-line">Rock &amp;</span>
               <span className="hero-title-line">Soul Music</span>
             </h2>
