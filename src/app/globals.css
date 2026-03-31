@@ -206,11 +206,14 @@ img {
 }
 
 .site-nav-link.is-active {
-  opacity: 0.75;
+  color: #7c6700;
+  opacity: 1;
 }
 
 .site-main {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: calc(100vh - (var(--frame) * 2) - (var(--stroke) * 2));
   min-height: calc(100dvh - (var(--frame) * 2) - (var(--stroke) * 2));
 }
@@ -347,18 +350,23 @@ img {
 }
 
 .site-footer {
-  position: absolute;
-  left: clamp(0.8rem, 2vw, 1.5rem);
-  right: clamp(0.8rem, 2vw, 1.5rem);
-  bottom: clamp(0.8rem, 2vw, 1.2rem);
+  position: relative;
+  left: auto;
+  right: auto;
+  bottom: auto;
   z-index: 3;
   display: flex;
   align-items: flex-end;
   gap: 0.7rem;
+  margin-top: auto;
 }
 
 .site-main--locked .site-footer {
+  position: absolute;
+  left: clamp(0.8rem, 2vw, 1.5rem);
+  right: clamp(0.8rem, 2vw, 1.5rem);
   bottom: clamp(0.7rem, 1.6dvh, 1rem);
+  margin-top: 0;
 }
 
 .site-quote-mark {
@@ -465,7 +473,8 @@ img {
 
 .content-page {
   display: flex;
-  min-height: inherit;
+  min-height: 100%;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
@@ -501,6 +510,478 @@ img {
   font-weight: 500;
 }
 
+.albums-page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100%;
+  gap: clamp(2rem, 4vw, 3rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  padding-top: clamp(2rem, 7vw, 4rem);
+  justify-items: start;
+}
+
+.albums-module {
+  width: min(100%, 70rem);
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  border: 1px solid rgba(189, 158, 1, 0.24);
+  background:
+    linear-gradient(180deg, rgba(189, 158, 1, 0.08) 0%, rgba(189, 158, 1, 0.03) 100%),
+    var(--background);
+  box-shadow: inset 0 0 0 1px rgba(189, 158, 1, 0.08);
+}
+
+.albums-hero {
+  display: grid;
+  grid-template-columns: minmax(15rem, 22rem) minmax(0, 1fr);
+  gap: clamp(1.4rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.album-cover-wrap {
+  width: 100%;
+  max-width: 22rem;
+  border: 1px solid rgba(189, 158, 1, 0.38);
+  padding: 0;
+  overflow: hidden;
+}
+
+.album-cover {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.album-summary {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+  max-width: 34rem;
+}
+
+.album-kicker,
+.album-section-label {
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.album-title {
+  font-size: clamp(2.4rem, 6vw, 4.7rem);
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+}
+
+.album-release-year {
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.album-meta {
+  display: grid;
+  gap: 0.35rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(189, 158, 1, 0.45);
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  line-height: 1.08;
+  font-weight: 600;
+}
+
+.album-caption,
+.album-credits-copy {
+  max-width: 30rem;
+  font-size: clamp(1rem, 1.7vw, 1.2rem);
+  line-height: 1.12;
+  font-weight: 500;
+}
+
+.album-stream-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.stream-button {
+  --stream-hover-border: rgba(189, 158, 1, 0.9);
+  --stream-hover-bg-top: rgba(189, 158, 1, 0.22);
+  --stream-hover-bg-bottom: rgba(189, 158, 1, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: min(100%, 13rem);
+  padding: 0.9rem 1rem 0.85rem;
+  border: 1px solid rgba(189, 158, 1, 0.55);
+  background: linear-gradient(180deg, rgba(189, 158, 1, 0.16) 0%, rgba(189, 158, 1, 0.08) 100%);
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.stream-button--apple {
+  --stream-hover-border: rgba(250, 35, 59, 0.82);
+  --stream-hover-bg-top: rgba(250, 35, 59, 0.22);
+  --stream-hover-bg-bottom: rgba(250, 35, 59, 0.12);
+  color: var(--foreground);
+  background: linear-gradient(180deg, rgba(250, 35, 59, 0.16) 0%, rgba(250, 35, 59, 0.08) 100%);
+  border-color: rgba(250, 35, 59, 0.44);
+}
+
+.stream-button:hover,
+.stream-button:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--stream-hover-border);
+  background: linear-gradient(180deg, var(--stream-hover-bg-top) 0%, var(--stream-hover-bg-bottom) 100%);
+}
+
+.stream-button span {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.stream-button strong {
+  font-size: 1.05rem;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.stream-button small {
+  font-size: 0.82rem;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.stream-button-icon {
+  width: 2.3rem;
+  height: 2.3rem;
+  flex: none;
+}
+
+.stream-button--spotify {
+  --stream-hover-border: rgba(30, 215, 96, 0.78);
+  --stream-hover-bg-top: rgba(30, 215, 96, 0.22);
+  --stream-hover-bg-bottom: rgba(30, 215, 96, 0.12);
+  background: linear-gradient(180deg, rgba(30, 215, 96, 0.16) 0%, rgba(30, 215, 96, 0.08) 100%);
+  border-color: rgba(30, 215, 96, 0.45);
+}
+
+.albums-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(16rem, 0.85fr);
+  gap: clamp(1.4rem, 3vw, 2.5rem);
+  align-items: start;
+  padding-top: clamp(0.2rem, 1vw, 0.6rem);
+}
+
+.album-tracklist,
+.album-credits {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 1.8vw, 1.35rem);
+  border: 1px solid rgba(189, 158, 1, 0.18);
+  background: rgba(189, 158, 1, 0.045);
+}
+
+.album-section-heading {
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+}
+
+.album-track-items {
+  display: grid;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.album-track-row {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.9rem 0;
+  border-top: 1px solid rgba(189, 158, 1, 0.18);
+}
+
+.album-track-row:first-child {
+  border-top: 0;
+}
+
+.album-track-number,
+.album-track-duration {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.album-track-copy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.album-track-title {
+  font-size: clamp(1rem, 1.7vw, 1.2rem);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.album-explicit-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.2rem;
+  background: rgba(189, 158, 1, 0.2);
+  font-size: 0.72rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.album-credits-list {
+  display: block;
+  margin: 0;
+  padding-left: 1.35rem;
+  list-style: disc;
+  list-style-position: outside;
+  font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.album-credits-list li {
+  margin-bottom: 0.55rem;
+  font-weight: 400;
+}
+
+.albums-footer {
+  position: relative;
+  inset: auto;
+  width: min(100%, 70rem);
+  margin-top: auto;
+  padding-top: clamp(1rem, 3vw, 2rem);
+}
+
+.biography-page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  padding-top: clamp(2rem, 7vw, 4rem);
+  padding-inline: 150px;
+}
+
+.biography-module {
+  width: min(100%, 72rem);
+  display: grid;
+  gap: clamp(1.5rem, 2.8vw, 2.4rem);
+  padding-top: clamp(0.45rem, 1vw, 0.75rem);
+  padding-bottom: clamp(1.1rem, 2vw, 1.6rem);
+  padding-inline: clamp(3rem, 6vw, 5.5rem);
+  border: 1px solid rgba(189, 158, 1, 0.24);
+  background:
+    linear-gradient(180deg, rgba(189, 158, 1, 0.08) 0%, rgba(189, 158, 1, 0.03) 100%),
+    var(--background);
+  box-shadow: inset 0 0 0 1px rgba(189, 158, 1, 0.08);
+  margin-inline: auto;
+}
+
+.biography-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.biography-top-rule,
+.biography-divider h2,
+.biography-card-label {
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.biography-top-rule {
+  margin: 0;
+  padding-block: clamp(0.12rem, 0.45vw, 0.3rem);
+}
+
+.biography-rule {
+  flex: 1;
+  height: 1px;
+  background: rgba(189, 158, 1, 0.3);
+}
+
+.biography-hero {
+  display: grid;
+  grid-template-columns: minmax(18rem, 28rem) minmax(0, 1fr);
+  gap: clamp(1.4rem, 3vw, 2.8rem);
+  align-items: center;
+}
+
+.biography-photo-frame {
+  position: relative;
+  border: 1px solid rgba(189, 158, 1, 0.44);
+  padding: 0;
+  overflow: hidden;
+}
+
+.biography-photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(189, 158, 1, 0.12);
+  pointer-events: none;
+}
+
+.biography-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 28%;
+  filter: saturate(0.88) contrast(1.04);
+}
+
+.biography-hero-copy {
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+  max-width: 34rem;
+}
+
+.biography-eyebrow {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.biography-title {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+}
+
+.biography-tagline {
+  max-width: 30rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(189, 158, 1, 0.42);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.08;
+  font-weight: 600;
+}
+
+.biography-body {
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.biography-body p {
+  font-size: clamp(1.22rem, 0.9vw + 0.7rem, 1.6rem);
+  line-height: 1.24;
+  font-weight: 500;
+}
+
+.biography-body em,
+.biography-card-value em,
+.biography-card-detail em {
+  font-style: italic;
+}
+
+.biography-body p:first-child::first-letter {
+  font-size: 3.8rem;
+  line-height: 0.78;
+  font-weight: 800;
+  float: left;
+  margin: 0.2rem 0.45rem 0 0;
+}
+
+.biography-quote {
+  margin: 0;
+  padding: clamp(1.2rem, 2.2vw, 1.7rem) clamp(1rem, 2vw, 1.5rem);
+  border-top: 2px solid rgba(189, 158, 1, 0.7);
+  border-bottom: 2px solid rgba(189, 158, 1, 0.7);
+}
+
+.biography-quote p {
+  max-width: 48rem;
+  font-size: clamp(2.8rem, 5.2vw, 4rem);
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 1400px) {
+  .biography-module {
+    width: min(100%, 1500px);
+  }
+
+  .biography-body {
+    max-width: 1250px;
+  }
+
+  .biography-quote p {
+    max-width: 1250px;
+  }
+
+  .biography-body p {
+    font-size: clamp(1.45rem, 0.9vw + 0.8rem, 2rem);
+    line-height: 1.2;
+  }
+}
+
+.biography-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(189, 158, 1, 0.24);
+  border: 1px solid rgba(189, 158, 1, 0.22);
+}
+
+.biography-card {
+  display: grid;
+  gap: 0.4rem;
+  padding: clamp(1rem, 1.8vw, 1.35rem);
+  background: rgba(5, 97, 5, 0.88);
+}
+
+.biography-card-value {
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.biography-card-detail {
+  font-size: clamp(0.98rem, 1.5vw, 1.08rem);
+  line-height: 1.12;
+  font-weight: 500;
+}
+
 @media (max-width: 900px) {
   .site-header {
     padding-right: clamp(4rem, 14vw, 5.6rem);
@@ -515,6 +996,77 @@ img {
     left: 38%;
     transform: translateX(-37%);
     height: min(78vh, 54rem);
+  }
+
+  .albums-hero,
+  .albums-details,
+  .biography-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .album-cover-wrap {
+    max-width: min(100%, 24rem);
+  }
+
+  .biography-photo-frame {
+    max-width: min(100%, 28rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .albums-page {
+    gap: 1.4rem;
+    padding-inline: 0.85rem;
+    padding-bottom: 1.4rem;
+  }
+
+  .albums-module {
+    padding: 0.95rem;
+  }
+
+  .albums-hero {
+    gap: 0.9rem;
+  }
+
+  .album-summary {
+    display: contents;
+  }
+
+  .album-kicker {
+    order: -1;
+    margin-bottom: 0.1rem;
+  }
+
+  .album-cover-wrap {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .album-section-heading {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .album-track-row {
+    grid-template-columns: 1.6rem minmax(0, 1fr) auto;
+    gap: 0.55rem;
+  }
+
+  .stream-button {
+    width: 100%;
+  }
+
+  .biography-page {
+    padding-inline: 0.85rem;
+    padding-bottom: 1.4rem;
+  }
+
+  .biography-module {
+    padding: 0.95rem;
+  }
+
+  .biography-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -597,5 +1149,50 @@ img {
   .content-body {
     font-size: 1rem;
     line-height: 1.2;
+  }
+
+  .biography-page {
+    padding-top: 1.5rem;
+  }
+
+  .biography-top-rule,
+  .biography-divider {
+    gap: 0.55rem;
+  }
+
+  .biography-hero {
+    gap: 1rem;
+  }
+
+  .biography-photo {
+    aspect-ratio: 1 / 1.2;
+  }
+
+  .biography-title {
+    font-size: clamp(2.4rem, 12vw, 4rem);
+  }
+
+  .biography-tagline {
+    font-size: 1.05rem;
+    line-height: 1.12;
+  }
+
+  .biography-body p {
+    font-size: 1rem;
+    line-height: 1.24;
+  }
+
+  .biography-body p:first-child::first-letter {
+    font-size: 3rem;
+    margin-top: 0.1rem;
+  }
+
+  .biography-quote p {
+    font-size: 1.35rem;
+  }
+
+  .biography-footer-rule p {
+    white-space: normal;
+    line-height: 1.25;
   }
 }
