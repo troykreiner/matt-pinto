@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
+import { MattPintoSymbol } from "@/components/matt-pinto-symbol";
 import { navItems } from "@/lib/site-content";
 
 type SiteShellProps = {
@@ -30,13 +31,7 @@ export function SiteShell({ children, fitViewport = false }: SiteShellProps) {
             />
           </Link>
           <Link href="/" className="site-symbol-link" aria-label="Home">
-            <Image
-              src="/matt-pinto-symbol.svg"
-              alt=""
-              width={114}
-              height={87}
-              className="site-symbol"
-            />
+            <MattPintoSymbol className="site-symbol" />
           </Link>
           <nav className="site-nav" aria-label="Primary">
             {navItems.map((item) => {
@@ -48,7 +43,8 @@ export function SiteShell({ children, fitViewport = false }: SiteShellProps) {
                   href={item.href}
                   className={`site-nav-link${active ? " is-active" : ""}`}
                 >
-                  {item.label}
+                  <span className="site-nav-label site-nav-label--desktop">{item.label}</span>
+                  <span className="site-nav-label site-nav-label--mobile">{item.mobileLabel}</span>
                 </Link>
               );
             })}

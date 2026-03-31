@@ -1,9 +1,9 @@
 export const navItems = [
-  { href: "/about", label: "About" },
-  { href: "/albums", label: "Albums" },
-  { href: "/biography", label: "Biography" },
-  { href: "/resume", label: "Resume" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About", mobileLabel: "About" },
+  { href: "/albums", label: "Albums", mobileLabel: "Albums" },
+  { href: "/biography", label: "Biography", mobileLabel: "Bio" },
+  { href: "/resume", label: "Resume", mobileLabel: "Resume" },
+  { href: "/contact", label: "Contact", mobileLabel: "Contact" },
 ];
 
 export const pageCopy = {
