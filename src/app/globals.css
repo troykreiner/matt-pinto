@@ -1705,16 +1705,20 @@ img {
   }
 
   .biography-hero {
-    gap: 1rem;
+    gap: 0.55rem;
   }
 
   .biography-eyebrow--mobile {
     display: block;
-    margin: 0 0 -0.15rem;
+    margin: 0;
   }
 
   .biography-hero-copy .biography-eyebrow {
     display: none;
+  }
+
+  .biography-hero-copy {
+    gap: 0.7rem;
   }
 
   .biography-photo {
