@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
+import { MattPintoLogo } from "@/components/matt-pinto-logo";
 import { MattPintoSymbol } from "@/components/matt-pinto-symbol";
 import { navItems } from "@/lib/site-content";
 
@@ -21,14 +21,7 @@ export function SiteShell({ children, fitViewport = false }: SiteShellProps) {
       <div className={`site-border${fitViewport ? " site-border--locked" : ""}`}>
         <header className="site-header">
           <Link href="/" className="site-logo-link" aria-label="Matt Pinto home">
-            <Image
-              src="/matt-pinto-logo.svg"
-              alt="Matt Pinto"
-              width={657}
-              height={93}
-              priority
-              className="site-logo"
-            />
+            <MattPintoLogo className="site-logo" />
           </Link>
           <Link href="/" className="site-symbol-link" aria-label="Home">
             <MattPintoSymbol className="site-symbol" />

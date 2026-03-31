@@ -104,6 +104,8 @@ img {
 .site-logo {
   width: 100%;
   height: auto;
+  display: block;
+  color: var(--foreground);
 }
 
 .site-symbol-link {
@@ -534,6 +536,11 @@ img {
 
   .home-follow-label {
     display: none;
+  }
+
+  .home-follow {
+    align-self: flex-start;
+    transform: translateY(-3.1rem);
   }
 }
 
