@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #056105;
-  --foreground: #bd9e01;
+  --background: #224e81;
+  --background-rgb: 34 78 129;
+  --foreground: #a3def6;
+  --foreground-rgb: 163 222 246;
+  --foreground-strong: #89c8e2;
   --frame: clamp(2px, 0.4vw, 5px);
   --stroke: clamp(5px, 0.8vw, 8px);
 }
@@ -201,13 +204,14 @@ img {
 
 .site-nav-link:hover,
 .site-nav-link:focus-visible {
-  color: #ab8f01;
+  color: var(--foreground-strong);
   opacity: 1;
 }
 
 .site-nav-link.is-active {
-  color: #7c6700;
+  color: var(--foreground-strong);
   opacity: 1;
+  font-style: italic;
 }
 
 .site-main {
@@ -311,7 +315,7 @@ img {
 
 .hero-lesson-link:hover,
 .hero-lesson-link:focus-visible {
-  background: #ab8f01;
+  background: var(--foreground-strong);
 }
 
 .hero-figure-wrap {
@@ -345,7 +349,7 @@ img {
 .hero-figure-tint {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 97, 5, 0.02) 0%, rgba(5, 97, 5, 0.08) 100%);
+  background: linear-gradient(180deg, rgb(var(--background-rgb) / 0.02) 0%, rgb(var(--background-rgb) / 0.08) 100%);
   z-index: 1;
 }
 
@@ -553,13 +557,11 @@ img {
   margin: 0;
 }
 
-.contact-notes a {
-  transition: color 140ms ease;
-}
-
-.contact-notes a:hover,
-.contact-notes a:focus-visible {
-  color: #ab8f01;
+.contact-social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 0.35rem;
 }
 
 .contact-form {
@@ -573,11 +575,11 @@ img {
   display: grid;
   gap: 0.9rem;
   padding: clamp(1.35rem, 2.8vw, 2rem);
-  border: 1px solid rgba(189, 158, 1, 0.34);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.34);
   background:
-    linear-gradient(180deg, rgba(189, 158, 1, 0.1) 0%, rgba(189, 158, 1, 0.04) 100%),
+    linear-gradient(180deg, rgb(var(--foreground-rgb) / 0.1) 0%, rgb(var(--foreground-rgb) / 0.04) 100%),
     var(--background);
-  box-shadow: inset 0 0 0 1px rgba(189, 158, 1, 0.08);
+  box-shadow: inset 0 0 0 1px rgb(var(--foreground-rgb) / 0.08);
 }
 
 .contact-complete-eyebrow {
@@ -647,14 +649,15 @@ img {
 .contact-field {
   display: grid;
   gap: 0.65rem;
+  align-content: start;
 }
 
 .contact-input {
   width: 100%;
   min-height: 4rem;
   padding: 1rem 1.1rem;
-  border: 1px solid rgba(189, 158, 1, 0.42);
-  background: rgba(189, 158, 1, 0.08);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.42);
+  background: rgb(var(--foreground-rgb) / 0.08);
   color: var(--foreground);
   font: inherit;
   line-height: 1.2;
@@ -666,22 +669,22 @@ img {
 }
 
 .contact-input::placeholder {
-  color: rgba(189, 158, 1, 0.46);
+  color: rgb(var(--foreground-rgb) / 0.46);
 }
 
 .contact-input:hover {
-  background: rgba(189, 158, 1, 0.11);
+  background: rgb(var(--foreground-rgb) / 0.11);
 }
 
 .contact-input:focus-visible {
   border-color: var(--foreground);
-  background: rgba(189, 158, 1, 0.13);
-  box-shadow: inset 0 0 0 1px rgba(189, 158, 1, 0.24);
+  background: rgb(var(--foreground-rgb) / 0.13);
+  box-shadow: inset 0 0 0 1px rgb(var(--foreground-rgb) / 0.24);
 }
 
 .contact-input.is-invalid {
-  border-color: #d8a33a;
-  background: rgba(216, 163, 58, 0.12);
+  border-color: var(--foreground-strong);
+  background: rgb(var(--foreground-rgb) / 0.16);
 }
 
 .contact-input--textarea {
@@ -698,11 +701,15 @@ img {
 
 .contact-error,
 .contact-status--error {
-  color: #f0bf5a;
+  color: var(--foreground-strong);
+}
+
+.contact-error {
+  min-height: 1.2em;
 }
 
 .contact-status--success {
-  color: #c7b23d;
+  color: var(--foreground-strong);
 }
 
 .contact-submit {
@@ -710,7 +717,7 @@ img {
   min-width: 9rem;
   min-height: 4rem;
   padding: 0.8rem 1.6rem 0.7rem;
-  border: 1px solid rgba(189, 158, 1, 0.75);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.75);
   background: transparent;
   color: var(--foreground);
   font: inherit;
@@ -728,7 +735,7 @@ img {
 
 .contact-submit:hover,
 .contact-submit:focus-visible {
-  background: rgba(189, 158, 1, 0.14);
+  background: rgb(var(--foreground-rgb) / 0.14);
   border-color: var(--foreground);
 }
 
@@ -753,11 +760,11 @@ img {
   display: grid;
   gap: clamp(1.25rem, 2.5vw, 2rem);
   padding: clamp(1.1rem, 2vw, 1.6rem);
-  border: 1px solid rgba(189, 158, 1, 0.24);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.24);
   background:
-    linear-gradient(180deg, rgba(189, 158, 1, 0.08) 0%, rgba(189, 158, 1, 0.03) 100%),
+    linear-gradient(180deg, rgb(var(--foreground-rgb) / 0.08) 0%, rgb(var(--foreground-rgb) / 0.03) 100%),
     var(--background);
-  box-shadow: inset 0 0 0 1px rgba(189, 158, 1, 0.08);
+  box-shadow: inset 0 0 0 1px rgb(var(--foreground-rgb) / 0.08);
 }
 
 .albums-hero {
@@ -770,7 +777,7 @@ img {
 .album-cover-wrap {
   width: 100%;
   max-width: 22rem;
-  border: 1px solid rgba(189, 158, 1, 0.38);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.38);
   padding: 0;
   overflow: hidden;
 }
@@ -814,7 +821,7 @@ img {
   display: grid;
   gap: 0.35rem;
   padding-left: 1rem;
-  border-left: 2px solid rgba(189, 158, 1, 0.45);
+  border-left: 2px solid rgb(var(--foreground-rgb) / 0.45);
   font-size: clamp(1rem, 1.7vw, 1.25rem);
   line-height: 1.08;
   font-weight: 600;
@@ -836,16 +843,16 @@ img {
 }
 
 .stream-button {
-  --stream-hover-border: rgba(189, 158, 1, 0.9);
-  --stream-hover-bg-top: rgba(189, 158, 1, 0.22);
-  --stream-hover-bg-bottom: rgba(189, 158, 1, 0.12);
+  --stream-hover-border: rgb(var(--foreground-rgb) / 0.9);
+  --stream-hover-bg-top: rgb(var(--foreground-rgb) / 0.22);
+  --stream-hover-bg-bottom: rgb(var(--foreground-rgb) / 0.12);
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
   min-width: min(100%, 13rem);
   padding: 0.9rem 1rem 0.85rem;
-  border: 1px solid rgba(189, 158, 1, 0.55);
-  background: linear-gradient(180deg, rgba(189, 158, 1, 0.16) 0%, rgba(189, 158, 1, 0.08) 100%);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.55);
+  background: linear-gradient(180deg, rgb(var(--foreground-rgb) / 0.16) 0%, rgb(var(--foreground-rgb) / 0.08) 100%);
   transition:
     transform 160ms ease,
     background-color 160ms ease,
@@ -903,6 +910,22 @@ img {
   border-color: rgba(30, 215, 96, 0.45);
 }
 
+.stream-button--instagram {
+  --stream-hover-border: rgba(193, 53, 132, 0.9);
+  --stream-hover-bg-top: rgba(193, 53, 132, 0.26);
+  --stream-hover-bg-bottom: rgba(131, 58, 180, 0.13);
+  background: linear-gradient(180deg, rgba(193, 53, 132, 0.18) 0%, rgba(131, 58, 180, 0.09) 100%);
+  border-color: rgba(193, 53, 132, 0.62);
+}
+
+.stream-button--tiktok {
+  --stream-hover-border: rgba(37, 244, 238, 0.9);
+  --stream-hover-bg-top: rgba(37, 244, 238, 0.26);
+  --stream-hover-bg-bottom: rgba(37, 244, 238, 0.13);
+  background: linear-gradient(180deg, rgba(37, 244, 238, 0.18) 0%, rgba(37, 244, 238, 0.09) 100%);
+  border-color: rgba(37, 244, 238, 0.62);
+}
+
 .albums-details {
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(16rem, 0.85fr);
@@ -916,8 +939,8 @@ img {
   display: grid;
   gap: 1rem;
   padding: clamp(1rem, 1.8vw, 1.35rem);
-  border: 1px solid rgba(189, 158, 1, 0.18);
-  background: rgba(189, 158, 1, 0.045);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.18);
+  background: rgb(var(--foreground-rgb) / 0.045);
 }
 
 .album-section-heading {
@@ -940,7 +963,7 @@ img {
   gap: 0.8rem;
   align-items: center;
   padding: 0.9rem 0;
-  border-top: 1px solid rgba(189, 158, 1, 0.18);
+  border-top: 1px solid rgb(var(--foreground-rgb) / 0.18);
 }
 
 .album-track-row:first-child {
@@ -974,7 +997,7 @@ img {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 0.2rem;
-  background: rgba(189, 158, 1, 0.2);
+  background: rgb(var(--foreground-rgb) / 0.2);
   font-size: 0.72rem;
   line-height: 1;
   font-weight: 800;
@@ -1023,11 +1046,11 @@ img {
   padding-top: 0;
   padding-bottom: clamp(1.1rem, 2vw, 1.6rem);
   padding-inline: clamp(3rem, 6vw, 5.5rem);
-  border: 1px solid rgba(189, 158, 1, 0.24);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.24);
   background:
-    linear-gradient(180deg, rgba(189, 158, 1, 0.08) 0%, rgba(189, 158, 1, 0.03) 100%),
+    linear-gradient(180deg, rgb(var(--foreground-rgb) / 0.08) 0%, rgb(var(--foreground-rgb) / 0.03) 100%),
     var(--background);
-  box-shadow: inset 0 0 0 1px rgba(189, 158, 1, 0.08);
+  box-shadow: inset 0 0 0 1px rgb(var(--foreground-rgb) / 0.08);
   margin-inline: auto;
 }
 
@@ -1054,7 +1077,7 @@ img {
 .biography-rule {
   flex: 1;
   height: 1px;
-  background: rgba(189, 158, 1, 0.3);
+  background: rgb(var(--foreground-rgb) / 0.3);
 }
 
 .biography-hero {
@@ -1067,7 +1090,7 @@ img {
 .biography-photo-frame {
   position: relative;
   margin-top: 50px;
-  border: 1px solid rgba(189, 158, 1, 0.44);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.44);
   padding: 0;
   overflow: hidden;
 }
@@ -1076,7 +1099,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  box-shadow: inset 0 0 0 1px rgba(189, 158, 1, 0.12);
+  box-shadow: inset 0 0 0 1px rgb(var(--foreground-rgb) / 0.12);
   pointer-events: none;
 }
 
@@ -1115,7 +1138,7 @@ img {
 .biography-tagline {
   max-width: 30rem;
   padding-left: 1rem;
-  border-left: 2px solid rgba(189, 158, 1, 0.42);
+  border-left: 2px solid rgb(var(--foreground-rgb) / 0.42);
   font-size: clamp(1.1rem, 2vw, 1.5rem);
   line-height: 1.08;
   font-weight: 600;
@@ -1151,8 +1174,8 @@ img {
 .biography-quote {
   margin: 0;
   padding: clamp(1.2rem, 2.2vw, 1.7rem) clamp(1rem, 2vw, 1.5rem);
-  border-top: 2px solid rgba(189, 158, 1, 0.7);
-  border-bottom: 2px solid rgba(189, 158, 1, 0.7);
+  border-top: 2px solid rgb(var(--foreground-rgb) / 0.7);
+  border-bottom: 2px solid rgb(var(--foreground-rgb) / 0.7);
 }
 
 .biography-quote p {
@@ -1186,15 +1209,15 @@ img {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
-  background: rgba(189, 158, 1, 0.24);
-  border: 1px solid rgba(189, 158, 1, 0.22);
+  background: rgb(var(--foreground-rgb) / 0.24);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.22);
 }
 
 .biography-card {
   display: grid;
   gap: 0.4rem;
   padding: clamp(1rem, 1.8vw, 1.35rem);
-  background: rgba(5, 97, 5, 0.88);
+  background: rgb(var(--background-rgb) / 0.88);
 }
 
 .biography-card-value {

@@ -24,8 +24,8 @@ export function SiteShell({ children, fitViewport = false }: SiteShellProps) {
             <Image
               src="/matt-pinto-logo.svg"
               alt="Matt Pinto"
-              width={809}
-              height={115}
+              width={657}
+              height={93}
               priority
               className="site-logo"
             />

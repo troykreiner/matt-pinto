@@ -20,6 +20,15 @@ const initialValues: FormValues = {
   message: "",
 };
 
+function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function isValidPhoneNumber(value: string) {
+  const digits = value.replace(/\D/g, "");
+  return digits.length >= 10 && digits.length <= 15;
+}
+
 function getErrors(values: FormValues): FormErrors {
   const errors: FormErrors = {};
 
@@ -32,9 +41,9 @@ function getErrors(values: FormValues): FormErrors {
   }
 
   if (!values.email.trim()) {
-    errors.email = "Email is required.";
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-    errors.email = "Enter a valid email address.";
+    errors.email = "Email or phone number is required.";
+  } else if (!isValidEmail(values.email) && !isValidPhoneNumber(values.email)) {
+    errors.email = "Enter a valid email address or phone number.";
   }
 
   if (!values.subject.trim()) {
@@ -220,10 +229,10 @@ export function ContactForm() {
 
       <label className="contact-field">
         <span className="contact-label">
-          Email <small>(required)</small>
+          Email or Phone Number <small>(required)</small>
         </span>
         <input
-          type="email"
+          type="text"
           name="email"
           value={values.email}
           onChange={(event) => updateField("email", event.target.value)}
