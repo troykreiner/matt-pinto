@@ -37,8 +37,9 @@ export const metadata: Metadata = {
       "Matt Pinto plays guitar with a focus on original songs and also teaches music lessons.",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/favicon-blue.svg?v=2",
+    shortcut: "/favicon-blue.svg?v=2",
+    apple: "/favicon-blue.svg?v=2",
   },
 };
 

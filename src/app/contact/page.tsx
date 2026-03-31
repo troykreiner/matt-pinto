@@ -39,6 +39,21 @@ function TikTokIcon() {
   );
 }
 
+function YouTubeIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 32 32"
+      className="stream-button-icon"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect x="3" y="7" width="26" height="18" rx="6" fill="#FF0033" opacity="0.2" />
+      <path d="M13.2 11.8L21.2 16L13.2 20.2V11.8Z" fill="currentColor" />
+    </svg>
+  );
+}
+
 export default function ContactPage() {
   return (
     <SiteShell>
@@ -76,6 +91,19 @@ export default function ContactPage() {
                 <span>
                   <strong>TikTok</strong>
                   <small>Follow Now</small>
+                </span>
+              </a>
+
+              <a
+                href="https://www.youtube.com/@mattpintoindis"
+                target="_blank"
+                rel="noreferrer"
+                className="stream-button stream-button--youtube"
+              >
+                <YouTubeIcon />
+                <span>
+                  <strong>YouTube</strong>
+                  <small>Subscribe Now</small>
                 </span>
               </a>
             </div>

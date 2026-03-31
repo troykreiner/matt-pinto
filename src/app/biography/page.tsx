@@ -180,6 +180,7 @@ export default function BiographyPage() {
             ))}
           </div>
         </div>
+
       </section>
     </SiteShell>
   );
