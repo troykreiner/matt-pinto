@@ -510,6 +510,7 @@ img {
   .hero-layout {
     align-content: start;
     padding-top: clamp(0.75rem, 3vw, 1.25rem);
+    padding-bottom: 8.25rem;
   }
 
   .hero-copy-group,
@@ -528,29 +529,69 @@ img {
   }
 
   .hero-lesson-link {
+    --mobile-home-left: clamp(0.8rem, 4vw, 1.2rem);
     position: absolute;
-    left: clamp(0.8rem, 4vw, 1.2rem);
+    left: var(--mobile-home-left);
     top: auto;
-    bottom: clamp(3.2rem, 12vw, 4.6rem);
+    bottom: clamp(6.1rem, 18vw, 7rem);
     z-index: 3;
     min-width: 0;
     padding-inline: 1.2rem;
     transform: none;
   }
 
+  .site-main--locked .site-footer {
+    --mobile-home-left: clamp(0.8rem, 4vw, 1.2rem);
+    left: var(--mobile-home-left);
+    right: clamp(0.8rem, 4vw, 1.2rem);
+    bottom: clamp(0.65rem, 3vw, 1rem);
+  }
+
   .home-footer {
     align-items: flex-start;
     flex-direction: column;
-    gap: 0.55rem;
+    gap: 0.8rem;
+    width: 100%;
   }
 
   .home-follow-label {
     display: none;
   }
 
+  .home-footer-quote {
+    display: grid;
+    justify-items: start;
+    align-items: start;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.18rem;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
   .home-follow {
-    margin-left: clamp(1.8rem, 4vw, 2.2rem);
+    margin-left: 0;
     transform: none;
+    align-self: flex-start;
+    padding-left: 0;
+  }
+
+  .home-follow-icons {
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+
+  .site-quote-mark {
+    width: 1rem;
+    margin-left: 0;
+  }
+
+  .site-footer-copy {
+    display: block;
+    font-size: 0.95rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 0;
   }
 }
 
