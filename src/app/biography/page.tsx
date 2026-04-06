@@ -14,7 +14,7 @@ const biographyGlance = [
     detail: "2006-present, in person and Zoom",
   },
   {
-    label: "Broadway And Touring",
+    label: "Theater And Touring",
     value: <em>Joseph and the Amazing Technicolor Dreamcoat</em>,
     detail: <em>Bloody Bloody Andrew Jackson</em>,
   },
@@ -75,7 +75,7 @@ export default function BiographyPage() {
             <p>
               Raised on Long Island, New York, Matt Pinto has spent the better
               part of two decades building a career that resists easy
-              categorization. He is, at once, a seasoned Broadway pit musician,
+              categorization. He is, at once, a seasoned theater pit musician,
               a sought-after private instructor, a New York City club circuit
               fixture, and a collaborator whose name appears alongside Tony and
               GRAMMY Award winners. What ties it all together is uncommon
@@ -93,14 +93,13 @@ export default function BiographyPage() {
               country.
             </p>
             <p>
-              His Broadway and touring credits tell part of the story. From
+              His theater and touring credits tell part of the story. From
               2015 to 2016, he served as guitarist and band tech with{" "}
               <em>Troika Entertainment</em> on the international tour of{" "}
               <em>Joseph and the Amazing Technicolor Dreamcoat</em>, performing
               pit guitar in cities across the United States, Canada, and Japan
               while also managing the setup and breakdown of the pit at each
-              venue. Earlier, he performed bass and guitar in both the
-              Off-Broadway and Broadway productions of{" "}
+              venue. Earlier, he performed bass and guitar in productions of{" "}
               <em>Bloody Bloody Andrew Jackson</em> at The Public Theater and
               the Bernard B. Jacobs Theatre.
             </p>
@@ -124,7 +123,7 @@ export default function BiographyPage() {
               <em>The Radium Girls</em> at New 42 Studios and Keenan Scott II&apos;s{" "}
               <em>Return of Young Boy</em> for New York Stage and Film. In
               March 2024, he was handpicked by GRAMMY and Tony Award winner{" "}
-              <em>Charlie Rosen</em> to perform in a small jazz orchestra at
+              <em>Charlie Rosen</em>&nbsp;to perform in a small jazz orchestra at
               the Lincoln Center Tina Fey and Brearley School Gala, sharing the
               stage with Josh Groban, Sara Bareilles, Fred Armisen, and other
               SNL alumni. He has also appeared multiple times as soloist and
@@ -158,7 +157,7 @@ export default function BiographyPage() {
               is available on all major streaming platforms.
             </p>
             <p>
-              Whether he is navigating a touring Broadway orchestra pit,
+              Whether he is navigating a touring orchestra pit,
               developing a new musical in a Manhattan rehearsal studio, or
               mentoring the next generation of guitarists from Long Island to
               the city, Matt Pinto brings the same values to the work: deep
