@@ -1460,11 +1460,11 @@ img {
 }
 
 .biography-body p:first-child::first-letter {
-  font-size: 3.8rem;
-  line-height: 0.78;
+  font-size: 4.15rem;
+  line-height: 0.92;
   font-weight: 800;
   float: left;
-  margin: 0.2rem 0.45rem 0 0;
+  margin: 0.02rem 0.45rem -0.08rem 0;
 }
 
 .biography-quote {
@@ -1798,8 +1798,9 @@ img {
   }
 
   .biography-body p:first-child::first-letter {
-    font-size: 3rem;
-    margin-top: 0.1rem;
+    font-size: 3.2rem;
+    line-height: 0.94;
+    margin: 0.02rem 0.32rem -0.06rem 0;
   }
 
   .biography-quote p {

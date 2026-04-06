@@ -92,7 +92,7 @@ export default function AlbumsPage() {
               <p className="album-release-year">Released on October 17, 2025</p>
 
               <div className="album-meta">
-                <p>5 tracks, 18 minutes</p>
+                <p>5 tracks, 17 minutes</p>
                 <p>&copy; 2025 Wake to Dream</p>
               </div>
 
