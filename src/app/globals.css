@@ -5,8 +5,8 @@
   --background-rgb: 253 249 228;
   --foreground: #444444;
   --foreground-rgb: 68 68 68;
-  --foreground-strong: #444444;
-  --foreground-hover: #444444;
+  --foreground-strong: #6a6a6a;
+  --foreground-hover: #6a6a6a;
   --frame: clamp(2px, 0.4vw, 5px);
   --stroke: clamp(5px, 0.8vw, 8px);
 }
