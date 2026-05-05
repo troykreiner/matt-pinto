@@ -46,8 +46,8 @@ body {
 }
 
 ::selection {
-  background: #5544AA;
-  color: #f6efc2;
+  background: var(--foreground);
+  color: var(--background);
 }
 
 a {
@@ -416,7 +416,7 @@ img {
   width: clamp(2.2rem, 4vw, 2.6rem);
   height: clamp(2.2rem, 4vw, 2.6rem);
   border-radius: 999px;
-  border: 1px solid rgb(191 234 245 / 0.7);
+  border: 1px solid rgb(var(--foreground-rgb) / 0.7);
   background: transparent;
   transition:
     transform 160ms ease,
@@ -427,14 +427,14 @@ img {
 .home-social-link:hover,
 .home-social-link:focus-visible {
   transform: translateY(-2px);
-  border-color: rgb(191 234 245 / 0.95);
-  background: rgb(191 234 245 / 0.08);
+  border-color: rgb(var(--foreground-rgb) / 0.95);
+  background: rgb(var(--foreground-rgb) / 0.08);
 }
 
 .home-social-icon {
   width: 1.35rem;
   height: 1.35rem;
-  color: rgb(191 234 245);
+  color: var(--foreground);
 }
 
 .site-quote-mark {
