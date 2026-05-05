@@ -338,6 +338,17 @@ img {
   background: var(--background);
 }
 
+.hero-figure-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .hero-figure {
   position: absolute;
   bottom: 0;
@@ -538,6 +549,19 @@ img {
     min-width: 0;
     padding-inline: 1.2rem;
     transform: none;
+  }
+
+  .hero-figure-wrap::after {
+    height: clamp(8rem, 30vw, 11rem);
+    opacity: 1;
+    z-index: 3;
+    background: linear-gradient(
+      180deg,
+      rgb(247 240 226 / 0) 0%,
+      rgb(247 240 226 / 0.14) 38%,
+      rgb(247 240 226 / 0.34) 68%,
+      rgb(247 240 226 / 0.58) 100%
+    );
   }
 
   .site-main--locked .site-footer {
@@ -986,6 +1010,15 @@ img {
   color: var(--foreground);
   background: linear-gradient(180deg, rgba(250, 35, 59, 0.16) 0%, rgba(250, 35, 59, 0.08) 100%);
   border-color: rgba(250, 35, 59, 0.44);
+}
+
+.stream-button--spotify {
+  --stream-hover-border: rgba(29, 185, 84, 0.86);
+  --stream-hover-bg-top: rgba(29, 185, 84, 0.28);
+  --stream-hover-bg-bottom: rgba(29, 185, 84, 0.14);
+  color: rgba(18, 18, 18, 0.86);
+  background: linear-gradient(180deg, rgba(29, 185, 84, 0.24) 0%, rgba(29, 185, 84, 0.11) 100%);
+  border-color: rgba(29, 185, 84, 0.58);
 }
 
 .stream-button--instagram {
