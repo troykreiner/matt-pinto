@@ -1852,6 +1852,19 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .video-play-badge {
+    width: 2.9rem;
+    height: 2.9rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .video-play-icon {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+
   .biography-page {
     padding-inline: 0.85rem;
     padding-bottom: 1.4rem;
