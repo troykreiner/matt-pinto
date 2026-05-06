@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type VideoItem = {
   id: string;
@@ -24,7 +24,7 @@ function PlayIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M13 10.9L22 16L13 21.1V10.9Z" fill="#444444" />
+      <path d="M11.4 9.6L23.2 16L11.4 22.4V9.6Z" fill="#444444" />
     </svg>
   );
 }
@@ -35,11 +35,27 @@ function truncateVideoTitle(title: string) {
 
 export function VideosGallery({ videos }: VideosGalleryProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [useExternalPlayback, setUseExternalPlayback] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updatePlaybackMode = () => setUseExternalPlayback(mediaQuery.matches);
+
+    updatePlaybackMode();
+    mediaQuery.addEventListener("change", updatePlaybackMode);
+
+    return () => mediaQuery.removeEventListener("change", updatePlaybackMode);
+  }, []);
 
   return (
     <div className="videos-grid">
       {videos.map((video) => {
         const isActive = activeId === video.id;
+        const watchUrl = `https://www.youtube.com/watch?v=${video.id}`;
 
         return (
           <article key={video.id} className="video-card">
@@ -52,6 +68,26 @@ export function VideosGallery({ videos }: VideosGalleryProps) {
                   allowFullScreen
                   className="video-embed"
                 />
+              ) : useExternalPlayback ? (
+                <a
+                  href={watchUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="video-thumb-button"
+                  aria-label={`Play ${video.title} on YouTube`}
+                >
+                  <img
+                    src={video.thumbnail}
+                    alt={`Thumbnail for ${video.title}`}
+                    className="video-thumb-image"
+                    loading="lazy"
+                  />
+                  <span className="video-thumb-overlay" />
+                  <span className="video-duration">{video.duration}</span>
+                  <span className="video-play-badge">
+                    <PlayIcon />
+                  </span>
+                </a>
               ) : (
                 <button
                   type="button"
