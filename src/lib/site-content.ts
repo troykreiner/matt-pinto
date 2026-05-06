@@ -1,5 +1,6 @@
 export const navItems = [
   { href: "/albums", label: "Albums", mobileLabel: "Albums" },
+  { href: "/videos", label: "Videos", mobileLabel: "Videos" },
   { href: "/biography", label: "Biography", mobileLabel: "Bio" },
   { href: "/resume", label: "Resume", mobileLabel: "Resume" },
   { href: "/contact", label: "Contact", mobileLabel: "Contact" },
@@ -10,6 +11,11 @@ export const pageCopy = {
     eyebrow: "Albums",
     title: "Recorded work, featured releases, and listening links.",
     body: "This section is ready for album artwork, release dates, streaming links, liner notes, and featured session credits. We can turn it into a clean discography grid or a more editorial release archive once you send the details.",
+  },
+  videos: {
+    eyebrow: "Videos",
+    title: "Curated performances, live sessions, and channel highlights.",
+    body: "A hand-picked video archive pulled from Matt's YouTube channel, designed for featured performances instead of a cluttered full feed.",
   },
   biography: {
     eyebrow: "Biography",
