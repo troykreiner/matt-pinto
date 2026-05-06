@@ -1195,12 +1195,14 @@ img {
   width: min(100%, 74rem);
   display: grid;
   gap: clamp(1.35rem, 2.5vw, 2rem);
+  min-width: 0;
 }
 
 .videos-intro {
   display: grid;
   gap: 0.7rem;
   max-width: 42rem;
+  min-width: 0;
 }
 
 .videos-eyebrow {
@@ -1219,6 +1221,7 @@ img {
   font-weight: 800;
   letter-spacing: -0.055em;
   max-width: 100%;
+  min-width: 0;
 }
 
 .videos-title span {
@@ -1317,8 +1320,8 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(3.6rem, 6.8vw, 4.7rem);
-  height: clamp(3.6rem, 6.8vw, 4.7rem);
+  width: clamp(3.1rem, 5.9vw, 4.1rem);
+  height: clamp(3.1rem, 5.9vw, 4.1rem);
   transform: translate(-50%, -50%);
   z-index: 2;
   border: 1px solid rgb(255 255 255 / 0.78);
@@ -1333,8 +1336,8 @@ img {
 }
 
 .video-play-icon {
-  width: 2rem;
-  height: 2rem;
+  width: 1.7rem;
+  height: 1.7rem;
 }
 
 .video-thumb-button:hover .video-play-badge,
@@ -1835,6 +1838,14 @@ img {
     gap: 1.4rem;
     padding-inline: 0.85rem;
     padding-bottom: 1.4rem;
+  }
+
+  .videos-title {
+    width: 100%;
+  }
+
+  .videos-title span {
+    white-space: normal;
   }
 
   .videos-grid {
