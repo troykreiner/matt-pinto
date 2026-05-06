@@ -335,7 +335,7 @@ img {
   pointer-events: none;
   isolation: isolate;
   overflow: hidden;
-  background: var(--background);
+  background: transparent;
 }
 
 .hero-figure-wrap::after {
@@ -357,9 +357,9 @@ img {
   height: min(92vh, 78rem);
   max-width: none;
   transform: translateX(-34%);
-  mix-blend-mode: multiply;
-  opacity: 0.98;
-  filter: grayscale(1) contrast(1.15) brightness(0.98);
+  mix-blend-mode: normal;
+  opacity: 1;
+  filter: none;
   z-index: 2;
 }
 
@@ -370,7 +370,7 @@ img {
 .hero-figure-tint {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgb(var(--background-rgb) / 0.02) 0%, rgb(var(--background-rgb) / 0.08) 100%);
+  background: transparent;
   z-index: 1;
 }
 

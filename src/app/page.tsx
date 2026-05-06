@@ -77,7 +77,7 @@ export default function Home() {
         <div className="hero-figure-wrap" aria-hidden="true">
           <div className="hero-figure-tint" />
           <Image
-            src="/matt-pinto-hero.png"
+            src="/matt-pinto-hero-main-creme-v2.jpg"
             alt=""
             width={992}
             height={768}
