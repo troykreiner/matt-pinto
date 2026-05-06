@@ -552,15 +552,15 @@ img {
   }
 
   .hero-figure-wrap::after {
-    height: clamp(10.5rem, 36vw, 13.5rem);
+    height: clamp(12.5rem, 42vw, 15.5rem);
     opacity: 1;
     z-index: 3;
     background: linear-gradient(
       180deg,
       rgb(247 240 226 / 0) 0%,
-      rgb(247 240 226 / 0.18) 34%,
-      rgb(247 240 226 / 0.42) 66%,
-      rgb(247 240 226 / 0.72) 100%
+      rgb(247 240 226 / 0.26) 28%,
+      rgb(247 240 226 / 0.56) 62%,
+      rgb(247 240 226 / 0.84) 100%
     );
   }
 
@@ -1317,30 +1317,30 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(3rem, 6vw, 4rem);
-  height: clamp(3rem, 6vw, 4rem);
+  width: clamp(3.6rem, 6.8vw, 4.7rem);
+  height: clamp(3.6rem, 6.8vw, 4.7rem);
   transform: translate(-50%, -50%);
   z-index: 2;
-  border: 1px solid rgb(255 255 255 / 0.42);
+  border: 1px solid rgb(255 255 255 / 0.78);
   border-radius: 999px;
-  background: rgb(255 255 255 / 0.36);
-  box-shadow: 0 8px 18px rgb(0 0 0 / 0.12);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgb(255 255 255 / 0.88);
+  box-shadow: 0 10px 22px rgb(0 0 0 / 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition:
     transform 180ms ease,
     background-color 180ms ease;
 }
 
 .video-play-icon {
-  width: 1.55rem;
-  height: 1.55rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .video-thumb-button:hover .video-play-badge,
 .video-thumb-button:focus-visible .video-play-badge {
   transform: translate(-50%, -50%) scale(1.05);
-  background: rgb(255 255 255 / 0.46);
+  background: rgb(255 255 255 / 0.96);
 }
 
 .video-meta {
@@ -1929,7 +1929,7 @@ img {
   }
 
   .hero-figure-wrap {
-    inset-inline: 0.25rem;
+    inset-inline: 0;
   }
 
   .hero-figure {
