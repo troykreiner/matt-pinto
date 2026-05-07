@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { League_Spartan } from "next/font/google";
+import { League_Spartan, Manrope } from "next/font/google";
 import "./globals.css";
 
 const leagueSpartan = League_Spartan({
@@ -7,6 +7,13 @@ const leagueSpartan = League_Spartan({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -51,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${leagueSpartan.variable} h-full antialiased`}
+      className={`${leagueSpartan.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
